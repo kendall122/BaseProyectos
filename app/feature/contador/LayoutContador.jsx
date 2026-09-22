@@ -1,21 +1,17 @@
 import { useState } from "react";
-
+import { Contador1 } from "./contador1/contador1";
+import { Contador2 } from "./contador2/contador2";
+import { Contador3 } from "./contador3/contador3";
 export function LayoutContador() {
   const [count, setCount] = useState(0);
 
-  function handleIncrement() {
-    setCount((prev) => prev + 1);
-  }
-  function handleDecrement() {
-    setCount((prev) => prev - 1);
-  }
-
   return (
     <>
-      <h1>Contador</h1>
-      <p>{count} </p>
-      <button onClick={count < 5 ? handleIncrement : null}>Incrementar</button>
-      <button onClick={count > 0 ? handleDecrement : null}>Decrementar</button>
+        <Contador1 count={count} setCount={setCount} />
+        <Contador2 count={count} setCount={setCount} />
+        <Contador3 count={count} setCount={setCount} />
     </>
   );
 }
+
+export default LayoutContador;
